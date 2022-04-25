@@ -57,6 +57,7 @@ public class MarkdownParseTest {
         expectedLinks = new ArrayList<>();
         assertEquals(expectedLinks, actualLinks);
 
+
         fileName = Path.of("/Users/tony/Documents/GitHub/markdown-parser/test-file7.md");
         markdown = Files.readString(fileName);
         actualLinks = MarkdownParse.getLinks(markdown);
