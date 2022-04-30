@@ -11,7 +11,7 @@ public class MarkdownParseTest {
 
     @Test
     public void addition() {
-        assertEquals(2, 2 + 1);
+        assertEquals(3, 2 + 1);
     }
 
     @Test
@@ -22,6 +22,52 @@ public class MarkdownParseTest {
         ArrayList<String> expectedLinks = new ArrayList<>();
         expectedLinks.add("https://something.com");
         expectedLinks.add("some-thing.html");
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file2.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        expectedLinks.add("https://something.com");
+        expectedLinks.add("some-page.html");
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file3.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file4.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file5.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        expectedLinks.add("page.com");
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file6.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        assertEquals(expectedLinks, actualLinks);
+
+
+        fileName = Path.of("test-file7.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
+        assertEquals(expectedLinks, actualLinks);
+
+        fileName = Path.of("test-file8.md");
+        markdown = Files.readString(fileName);
+        actualLinks = MarkdownParse.getLinks(markdown);
+        expectedLinks = new ArrayList<>();
         assertEquals(expectedLinks, actualLinks);
     }
 }
