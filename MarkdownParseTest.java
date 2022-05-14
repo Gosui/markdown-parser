@@ -11,7 +11,8 @@ public class MarkdownParseTest {
 
     @Test
     public void addition() {
-        assertEquals(3, 2 + 1);
+        assertEquals(2, 2);
+        assertEquals(1.5, 3/2.0, 0);
     }
 
     @Test
