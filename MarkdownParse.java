@@ -1,6 +1,6 @@
 //https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 //test2
-//Added comment for Lab Report 3
+//Adding a comment for Lab Report 3 part 2
 
 import java.io.IOException;
 import java.nio.file.Files;
