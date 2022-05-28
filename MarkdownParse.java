@@ -16,12 +16,16 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int exclamation = markdown.indexOf("!",currentIndex);
             int openBracket = markdown.indexOf("[", currentIndex);
+            System.out.println(openBracket);
             int closeBracket = markdown.indexOf("]", openBracket);
+            System.out.println(closeBracket);
             int openParen = markdown.indexOf("(", closeBracket);
+            System.out.println(openParen);
             int closeParen = markdown.indexOf(")", openParen);
+            System.out.println(closeParen);
             int openCarrot = markdown.indexOf("<", currentIndex);
             int closeCarrot = markdown.indexOf(">", openCarrot);
-            if (openBracket != -1 && openParen != -1 && exclamation != openBracket -1) {
+            if (openBracket != -1 && openParen != -1 && exclamation != openBracket - 1) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
             }
